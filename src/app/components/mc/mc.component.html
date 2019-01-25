@@ -1,50 +1,20 @@
-<body><div>
-  <h1>List of User </h1>
- 
-  <table>
+<body>
+  <div>
+    <input type="text" class="form-control" #title (keyup.enter)="ajouter(title)"  placeholder='ADD NEW POST'>
+  </div>
+  <div>
+  <h1>List of POSTS </h1>
+    <div class="list-group">
+      
+        <li  class="list-group-item"  *ngFor="let post of posts">
+            <button class="btn btn-primary" (click)="update(post,title.value)">Update </button>
+            {{post.title}}</li>
+            
+            
+       
+  
+    </div>
 
-    <tr>
-      <th>id</th>
-      <th>Name </th>
-      <th> Username</th>
-      <th>Email</th>
-    </tr>
-    
-        
-            <tr *ngFor="let user of users">
-              <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.username}}</td>
-              <td>{{user.email}}</td>
-            </tr>
-         
-    
-
-  </table>
 
 </div>
 </body>
-<style>
-  body {
-    background-color: #353b48;
-  }
-  table {
-    text-align: center;
-  }
-  h1  {
-    background: #1abc9c;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 20px 20px 30px #273c75;
-  }
-td {
-  padding: 40px;
-  background: #34495e;
-  color:#ecf0f1;
-}
-th {
-  background: #3498db;
-  border-top-right-radius: 40px;
-}
-
-</style>
